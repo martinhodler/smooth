@@ -20,7 +20,7 @@
  *
  */
 
-(function () {
+var SMOOTH = function () {
 	var scrollPos = 0;
 	var scrollEnd = 0;
 	var isAnimating = false;
@@ -33,13 +33,13 @@
 		isChrome = window.navigator.userAgent.match(/Chrome/i) ? true : false;
 		
 		if (isIE)
-			setTimeout(function() { calculate(); }, 100);
+			setTimeout(function() { calculate(false); }, 100);
 		else
-			calculate();
+			calculate(false);
 	}
 
 	function resize(e) {
-		calculate();
+		calculate(false);
 	}
 
 	function calculate(posOnly) {
@@ -69,12 +69,10 @@
 		
 		delta = delta * -1;
 		
-		var newEnd = scrollEnd + delta;
+		scrollEnd += delta;
 		
-		if (newEnd < 0)
-			newEnd = 0;
-		
-		scrollEnd = newEnd;
+		if (scrollEnd < 0)
+			scrollEnd = 0;
 		
 		endTime = new Date().getTime() + 1000;
 		
@@ -93,7 +91,12 @@
 		time = new Date().getTime();
 		
 		var delta = endTime - time;
-		scrollPos += Math.round((scrollEnd - scrollPos) / 5000 * delta);
+		scrollPos += (scrollEnd - scrollPos) / 5000 * delta;
+		
+		if (scrollPos < 5)
+			scrollPos = Math.floor(scrollPos);
+		else
+			scrollPos = Math.round(scrollPos);
 		
 		var top = 0;
 		
@@ -108,6 +111,7 @@
 		if (delta > 0 && top == scrollPos) {
 			setTimeout(scrollStep, 32);
 		} else {
+			scrollPos = top;
 			scrollEnd = top;
 			isAnimating = false;
 		}
@@ -124,4 +128,17 @@
 		document.attachEvent("on"+mousewheelevt, function(e){ scroll(e); } ); 
 		window.attachEvent("onload", function(e){ init(e); } );
 	}
-})();
+	
+	function getScrollPosition() {
+		return scrollPos;
+	}
+	
+	function getScrollEnd() {
+		return scrollEnd;
+	}
+	
+	return {
+		scrollPosition : getScrollPosition,
+		scrollEnd : getScrollEnd
+	};
+}();
