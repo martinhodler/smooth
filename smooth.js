@@ -33,13 +33,13 @@ var SMOOTH = function () {
 		isChrome = window.navigator.userAgent.match(/Chrome/i) ? true : false;
 		
 		if (isIE)
-			setTimeout(function() { calculate(); }, 100);
+			setTimeout(function() { calculate(false); }, 100);
 		else
-			calculate();
+			calculate(false);
 	}
 
 	function resize(e) {
-		calculate();
+		calculate(false);
 	}
 
 	function calculate(posOnly) {
