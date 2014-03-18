@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>SmoothScroll</title>
-		<script type="text/javascript" src="smooth.js"></script>
+		<title>.smooth Scroll</title>
+		<script type="text/javascript" src="minified/smooth.js"></script>
 		<link href='http://fonts.googleapis.com/css?family=Dosis:200,400,700' rel='stylesheet' type='text/css'>
 		<link type="text/css" rel="Stylesheet" href="style.css" />
 	</head>
@@ -10,21 +10,53 @@
 		<div class="head">
 			<div class="inner">
 				<h1>.smooth</h1>
-				<div class="slogan">the nicer way to scroll</div>
+				<div class="slogan">the .smart way to .scroll</div>
 			</div>
 			<a href="https://github.com/martinhodler/smooth"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://github-camo.global.ssl.fastly.net/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
 		</div>
 		<div class="content">
 			<div class="inner">
-				<b>smooth</b> is a small javascript-file that enables a smooth scrolling on the most actual webbrowsers.<br>
+				<b>.smooth</b> is a small javascript-file that enables a smooth scrolling on the most actual webbrowsers.<br />
 				You only need to link it in your HTML: <br />
 				<pre>&lt;script type=&quot;text/javascript&quot; src=&quot;scroll.js&quot;&gt;&lt;/script&gt;</pre>
+				<br /><br /><br />
+				<hr>
+				<h2>Parallax Scrolling</h2>
+				<div class="parallax-bar">
+					<div id="parallax" class="parallax">Perfect for parallax-scrolling</div>
+				</div>
+				<br /><br /><br />
+				<hr>
+				<h2>Download</h2>
+				<p>Get it on my <a href="https://github.com/martinhodler/smooth">Github-Repo</a></p>
 			</div>
 		</div>
 		<div class="foot">
 			<div class="inner">
-				&copy; 2014 <a href="http://www.martinhodler.ch">Martin Hodler</a>
+				&copy; 2014 <a href="http://www.martinhodler.ch">Martin Hodler</a><br />
+				<small><b>.smooth</b> is licensed under the GNU GPLv3 license.</small>
 			</div>
 		</div>
 	</body>
+	
+	<script type="text/javascript">
+		
+		var parallax = document.getElementById('parallax');
+		
+		function getDocHeight() {
+			var d = document;
+			return Math.max(
+				d.body.scrollHeight, d.documentElement.scrollHeight,
+				d.body.offsetHeight, d.documentElement.offsetHeight,
+				d.body.clientHeight, d.documentElement.clientHeight
+			);
+		}
+		
+		function scroll() {
+			parallax.style.marginLeft = (SMOOTH.scrollPosition() / (getDocHeight() - window.innerHeight)) * 764 + "px";
+		}
+		
+		window.onscroll = scroll;
+		
+	</script>
 </html>
