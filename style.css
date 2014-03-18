@@ -10,6 +10,23 @@ body {
 	color: #333;
 }
 
+a {
+	color: #19A3FF;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+hr {
+	color: #dee;
+	border: none;
+	border-top: 1px dashed #aaa;
+	margin: 40px 0 40px 0;
+}
+
 div.inner {
 	margin: 0 auto;
 	width: 1024px;
@@ -42,7 +59,7 @@ div.content {
 	position: relative;
 	float: left;
 	width: 100%;
-	min-height: 400px;
+	min-height: 500px;
 	padding: 40px 0px 40px 0px;
 }
 
@@ -64,6 +81,24 @@ div.foot {
 	padding: 40px 0px 20px 0px;
 	width: 100%;
 	color: #9ab;
+}
+
+div.parallax {
+	padding: 5px;
+	background-color: #19A3FF;
+	width: 250px;
+	color: #fff;
+	text-align: center;
+	float: left;
+}
+
+div.parallax-bar {
+	padding: 5px;
+	background-color: #dee;
+	width: 100%;
+	color: #fff;
+	float: left;
+	clear: left;
 }
 
 div.foot a {
