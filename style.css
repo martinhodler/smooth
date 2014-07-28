@@ -45,10 +45,21 @@ div.head {
 	font-size: 2em;
 }
 
+div.head h1 {
+	position: relative;
+	display: block;
+	margin-bottom: 0px;
+}
+
 .slogan {
 	position: relative;
+<<<<<<< HEAD
 	margin-top: -80px;
 	margin-left: 0px;
+=======
+	margin-top: -25px;
+	margin-left: 20px;
+>>>>>>> origin/master
 	font-size: 0.75em;
 	font-weight: 200;
 	float: left;
@@ -61,6 +72,8 @@ div.content {
 	width: 100%;
 	min-height: 500px;
 	padding: 40px 0px 40px 0px;
+	display: block;
+	background-color: #fff;
 }
 
 pre {

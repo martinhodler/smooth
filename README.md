@@ -1,7 +1,7 @@
 smooth
 ======
 
-A javascript file that enables smooth scrolling on your homepage.
+A javascript plugin that enables smooth scrolling on your homepage.
 
 Simply include the script in your HTML:
 `<script type="text/javascript" src="smooth.js"></script>`
