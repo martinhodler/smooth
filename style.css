@@ -45,9 +45,15 @@ div.head {
 	font-size: 2em;
 }
 
+div.head h1 {
+	position: relative;
+	display: block;
+	margin-bottom: 0px;
+}
+
 .slogan {
 	position: relative;
-	margin-top: -80px;
+	margin-top: -25px;
 	margin-left: 20px;
 	font-size: 0.75em;
 	font-weight: 200;
@@ -61,6 +67,8 @@ div.content {
 	width: 100%;
 	min-height: 500px;
 	padding: 40px 0px 40px 0px;
+	display: block;
+	background-color: #fff;
 }
 
 pre {

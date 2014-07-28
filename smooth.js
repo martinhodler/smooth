@@ -6,17 +6,17 @@
  *	GNU GPL v3
  *
  *	This program is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
+ *	it under the terms of the GNU General Public License as published by
+ *	the Free Software Foundation, either version 3 of the License, or
+ *	(at your option) any later version.
  *
- *  This program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
+ *	This program is distributed in the hope that it will be useful,
+ *	but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *	GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License
- *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *	You should have received a copy of the GNU General Public License
+ *	along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
 
@@ -73,6 +73,8 @@ var SMOOTH = function () {
 		
 		if (scrollEnd < 0)
 			scrollEnd = 0;
+		if (scrollEnd > (document.body.clientHeight - window.innerHeight) + 3)
+			scrollEnd = (document.body.clientHeight - window.innerHeight) + 3;
 		
 		endTime = new Date().getTime() + 1000;
 		
@@ -97,6 +99,12 @@ var SMOOTH = function () {
 			scrollPos = Math.floor(scrollPos);
 		else
 			scrollPos = Math.round(scrollPos);
+		
+		if (scrollPos > (document.body.clientHeight - window.innerHeight) - 5)
+			scrollPos = Math.floor(scrollPos);
+		else
+			scrollPos = Math.round(scrollPos);
+		
 		
 		var top = 0;
 		
