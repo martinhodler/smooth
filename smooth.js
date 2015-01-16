@@ -1,7 +1,7 @@
 /*
  *	smooth is a small javascript-file that enables a smooth scrolling on the most actual webbrowsers.
  *
- *	Copyright © 2014 Martin Hodler <martin.hodler@gmail.com>
+ *	Copyright Â© 2014 Martin Hodler <martin.hodler@gmail.com>
  *
  *	GNU GPL v3
  *
@@ -73,8 +73,8 @@ var SMOOTH = function () {
 		
 		if (scrollEnd < 0)
 			scrollEnd = 0;
-		if (scrollEnd > (document.body.clientHeight - window.innerHeight) + 3)
-			scrollEnd = (document.body.clientHeight - window.innerHeight) + 3;
+		if (scrollEnd > (document.clientHeight - window.innerHeight) + 3)
+			scrollEnd = (document.clientHeight - window.innerHeight) + 3;
 		
 		endTime = new Date().getTime() + 1000;
 		
